@@ -23,15 +23,17 @@ public class ShipMovement : MonoBehaviour
     void Update()
     {
         z = 0;
-
-        if (Input.GetKey(KeyCode.W) && rb.velocity.z < maxVelocity) z = acceleration;
-        if (Input.GetKey(KeyCode.S) && rb.velocity.z > -maxVelocity) z = -acceleration;
+        if (Input.GetKey(KeyCode.W)) z = acceleration;
+        if (Input.GetKey(KeyCode.S)) z = -acceleration;
+        
         if (Input.GetKey(KeyCode.A) && x > -maxRotation) x += -rotationRate;
         if (Input.GetKey(KeyCode.D) && x < maxRotation) x += rotationRate;
 
         direction = transform.forward.normalized * z;
         rotation = transform.up.normalized * x;
         transform.Rotate(rotation);
-        rb.velocity += direction;
+        //print(rb.velocity.magnitude + " " + maxVelocity);
+        //if (rb.velocity.magnitude < maxVelocity)
+            rb.velocity += direction;
     }
 }
