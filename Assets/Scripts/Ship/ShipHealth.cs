@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShipHealth : MonoBehaviour
 {
-    public ShipHealth singleton;
+    public static ShipHealth instance;
 
     [SerializeField]
     private float maxHP = 100f;
@@ -14,8 +14,8 @@ public class ShipHealth : MonoBehaviour
 
     private void Awake()
     {
-        if (singleton == null)
-            singleton = this;
+        if (instance == null)
+            instance = this;
         else
             Destroy(gameObject);
     }

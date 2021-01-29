@@ -9,6 +9,8 @@ using UnityEngine.UI;
 /// </summary>
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager instance;
+
     private void Start()
     {
         float newVolume = 0;
@@ -26,6 +28,11 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+
         GameObject[] objs = GameObject.FindGameObjectsWithTag("Music");
 
         if (objs.Length > 1)
