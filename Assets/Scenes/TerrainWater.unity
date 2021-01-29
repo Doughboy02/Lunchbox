@@ -523,6 +523,7 @@ MonoBehaviour:
   xOffset: 1.5
   yOffset: 18
   maxPitchAngle: 135
+  maxPitchRange: 45
   pitchCorrectionRate: 1
   rollRange: 15
   rollCorrectionRate: 1

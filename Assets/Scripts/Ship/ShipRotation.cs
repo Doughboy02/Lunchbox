@@ -7,7 +7,7 @@ public class ShipRotation : MonoBehaviour
     public float zOffset;
     public float xOffset;
     public float yOffset;
-    public float maxPitchAngle;
+    public float maxPitchRange;
     public float pitchCorrectionRate;
     public float rollRange;
     public float rollCorrectionRate;
@@ -39,10 +39,11 @@ public class ShipRotation : MonoBehaviour
         float checkX = Vector3.Angle(Vector3.up,directionX);
         //print(checkZ);
         //print(checkX);
-        if (checkZ > maxPitchAngle) transform.Rotate(transform.right.normalized * pitchCorrectionRate);
+        if (checkZ > 90 + maxPitchRange) transform.Rotate(transform.right.normalized * pitchCorrectionRate);
+        if (checkZ < 90 - maxPitchRange) transform.Rotate(transform.right.normalized * -pitchCorrectionRate);
         if (checkX < 90 - rollRange) transform.Rotate(transform.forward.normalized * -rollCorrectionRate);
         if (checkX > 90 + rollRange) transform.Rotate(transform.forward.normalized * rollCorrectionRate);
         transform.Rotate(transform.right.normalized * (back - front));
-        //transform.Rotate(transform.forward.normalized * (left - right));
+        transform.Rotate(transform.forward.normalized * (left - right));
     }
 }
