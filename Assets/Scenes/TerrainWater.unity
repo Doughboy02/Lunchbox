@@ -212,6 +212,7 @@ GameObject:
   - component: {fileID: 537328063}
   - component: {fileID: 537328062}
   - component: {fileID: 537328064}
+  - component: {fileID: 537328065}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Untagged
@@ -247,10 +248,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 537328061}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 42.781723, y: 3.1, z: 80.43737}
+  m_LocalPosition: {x: 42.781723, y: 7.43, z: 80.43737}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1416920701}
+  - {fileID: 1904026764}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -270,6 +272,20 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &537328065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537328061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a66663c801a62e4f9e575c3d05a10d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yoffset: -18
+  terrain: {fileID: 1418305181}
 --- !u!1 &894984475
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,11 +515,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1416920700}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.6666222, y: 0.95230675, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 261738252}
-  - {fileID: 1904026764}
   m_Father: {fileID: 537328063}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -521,12 +536,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zOffset: 8
   xOffset: 1.5
-  yOffset: 18
-  maxPitchAngle: 135
-  maxPitchRange: 45
+  yOffset: 0
+  maxPitchRange: 20
   pitchCorrectionRate: 1
-  rollRange: 15
+  rollRange: 5
   rollCorrectionRate: 1
+  pitchMulti: 0.3
+  rollMulti: 0.3
   terrain: {fileID: 1418305181}
 --- !u!218 &1418305181 stripped
 Terrain:
@@ -610,13 +626,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1904026761}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.2999997, z: -13.5}
+  m_LocalRotation: {x: 0.03758024, y: -0, z: -0, w: 0.9992936}
+  m_LocalPosition: {x: 0, y: 8.09, z: -13.5}
   m_LocalScale: {x: 0.254, y: 0.25400004, z: 0.25400004}
   m_Children: []
-  m_Father: {fileID: 1416920701}
+  m_Father: {fileID: 537328063}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 4.307, y: 0, z: 0}
 --- !u!114 &1904026765
 MonoBehaviour:
   m_ObjectHideFlags: 0

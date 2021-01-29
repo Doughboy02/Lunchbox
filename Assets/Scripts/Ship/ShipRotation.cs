@@ -11,6 +11,8 @@ public class ShipRotation : MonoBehaviour
     public float pitchCorrectionRate;
     public float rollRange;
     public float rollCorrectionRate;
+    public float pitchMulti = 0.3f;
+    public float rollMulti = 0.5f;
     public Terrain terrain;
     private float front,center,back;
     private float left, right;
@@ -19,6 +21,7 @@ public class ShipRotation : MonoBehaviour
 
     private void Update()
     {
+
         frontPosition = transform.position + transform.forward.normalized * zOffset;
         centerPosition = transform.position;
         backPosition = transform.position - transform.forward.normalized * zOffset;
@@ -32,7 +35,7 @@ public class ShipRotation : MonoBehaviour
         left = Terrain.activeTerrain.SampleHeight(leftPosition);
         right = Terrain.activeTerrain.SampleHeight(rightPosition);
 
-        transform.position = new Vector3(transform.position.x, center - yOffset, transform.position.z);
+        //transform.position = new Vector3(transform.position.x, center - yOffset, transform.position.z);
         Vector3 directionZ = backPosition - frontPosition;
         Vector3 directionX = rightPosition - leftPosition;
         float checkZ = Vector3.Angle(Vector3.up,directionZ);
@@ -43,7 +46,7 @@ public class ShipRotation : MonoBehaviour
         if (checkZ < 90 - maxPitchRange) transform.Rotate(transform.right.normalized * -pitchCorrectionRate);
         if (checkX < 90 - rollRange) transform.Rotate(transform.forward.normalized * -rollCorrectionRate);
         if (checkX > 90 + rollRange) transform.Rotate(transform.forward.normalized * rollCorrectionRate);
-        transform.Rotate(transform.right.normalized * (back - front));
-        transform.Rotate(transform.forward.normalized * (left - right));
+        transform.Rotate(transform.right.normalized * (back - front) * pitchMulti);
+        transform.Rotate(transform.forward.normalized * (left - right) * rollMulti);
     }
 }
