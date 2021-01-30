@@ -30,7 +30,8 @@ public class Waves : MonoBehaviour
             for (int i = 0; i < width; i++)
                 for (int j = 0; j < height; j++)
                 {
-                    heights[i, j] = Mathf.PerlinNoise((float)(i + Time.time * speed) / width * size, (float)(j + Time.time * speed) / height * size);
+                    heights[i, j] = Mathf.PerlinNoise((float)(i + Time.time * speed) / width * size, (float)(j + Time.time * speed) / height * size) / 2;
+                    heights[i, j] += Mathf.PerlinNoise((float)(i + -Time.time * speed) / width * size, (float)(j + Time.time * speed) / height * size) / 2;
                 }
             // set the new height
             terrain.terrainData.SetHeights(0, 0, heights);
