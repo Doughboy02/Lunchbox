@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 929631036011037193}
   - component: {fileID: 929631036011037194}
   m_Layer: 0
-  m_Name: TerrainManager
+  m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,4 +123,4 @@ MonoBehaviour:
   terrain: {fileID: 929631035441060706}
   test: 1
   speed: 100
-  size: 3
+  size: 5
