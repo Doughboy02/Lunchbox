@@ -236,7 +236,7 @@ MonoBehaviour:
   x: 0
   z: 0
   acceleration: 0.3
-  rotationRate: 0.005
+  rotationRate: 0.05
   maxRotation: 0.5
   maxVelocity: 20
 --- !u!4 &537328063
@@ -250,6 +250,7 @@ Transform:
   m_LocalPosition: {x: 42.781723, y: 3.1, z: 80.43737}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1904026764}
   - {fileID: 1416920701}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -362,6 +363,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1117369667
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1117369668}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1117369668
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117369667}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1416920701}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1235123869
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,12 +531,12 @@ Transform:
   m_GameObject: {fileID: 1416920700}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.6666222, y: 0.95230675, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 261738252}
-  - {fileID: 1904026764}
+  - {fileID: 1117369668}
   m_Father: {fileID: 537328063}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1416920702
 MonoBehaviour:
@@ -519,15 +550,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11064befb6732f5458480f16fe5d9556, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zOffset: 8
+  zOffset: 32
   xOffset: 1.5
   yOffset: 18
-  maxPitchAngle: 135
   maxPitchRange: 45
   pitchCorrectionRate: 1
   rollRange: 15
   rollCorrectionRate: 1
   terrain: {fileID: 1418305181}
+  front: 0
+  center: 0
+  back: 0
 --- !u!218 &1418305181 stripped
 Terrain:
   m_CorrespondingSourceObject: {fileID: 929631035441060706, guid: 52b14b498a43bbd49b2d29febb8acae0, type: 3}
@@ -610,13 +643,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1904026761}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.2999997, z: -13.5}
-  m_LocalScale: {x: 0.254, y: 0.25400004, z: 0.25400004}
+  m_LocalRotation: {x: 0.19304338, y: -0, z: -0, w: 0.9811902}
+  m_LocalPosition: {x: 2.6666222, y: 52.3, z: -82.1}
+  m_LocalScale: {x: 1.016, y: 1.0160002, z: 1.0160002}
   m_Children: []
-  m_Father: {fileID: 1416920701}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 537328063}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 22.261, y: 0, z: 0}
 --- !u!114 &1904026765
 MonoBehaviour:
   m_ObjectHideFlags: 0
