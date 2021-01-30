@@ -11,21 +11,6 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
 
-    private void Start()
-    {
-        float newVolume = 0;
-        try
-        {
-            newVolume = AudioClipModel.volume = manualVolumeSources[0].volume;
-        }
-        catch { }
-
-        foreach (AudioSource source in manualVolumeSources)
-        {
-            source.volume = newVolume;
-        }
-    }
-
     private void Awake()
     {
         if (instance == null)
@@ -41,6 +26,21 @@ public class AudioManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(this.gameObject);
+    }
+
+    private void Start()
+    {
+        float newVolume = 0;
+        try
+        {
+            newVolume = AudioClipModel.volume = manualVolumeSources[0].volume;
+        }
+        catch { }
+
+        foreach (AudioSource source in manualVolumeSources)
+        {
+            source.volume = newVolume;
+        }
     }
 
     //Audio sources on loop can't adjust volume through the audio clip manager so
