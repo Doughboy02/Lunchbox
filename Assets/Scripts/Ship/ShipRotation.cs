@@ -34,7 +34,7 @@ public class ShipRotation : MonoBehaviour
         leftPosition = new Vector3(leftPosition.x, left, leftPosition.z);
         rightPosition = new Vector3(rightPosition.x, right, rightPosition.z);
 
-        transform.position = new Vector3(transform.position.x, center - yOffset, transform.position.z);
+        transform.parent.position = new Vector3(transform.parent.position.x, center - yOffset, transform.parent.position.z);
         Vector3 directionZ = frontPosition - backPosition;
         Vector3 directionX = rightPosition - leftPosition;
         float checkZ = Vector3.Angle(Vector3.up,directionZ);
