@@ -20,7 +20,7 @@ public class ShipMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
     }
-    void Update()
+    void FixedUpdate()
     {
         z = 0;
         if (Input.GetKey(KeyCode.W)) z = acceleration;
