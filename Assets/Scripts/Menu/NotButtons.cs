@@ -31,6 +31,7 @@ public class NotButtons : MonoBehaviour
         AudioManager.instance.manualVolumeSources[6].Stop();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         AudioManager.instance.manualVolumeSources[3].Play();
+        AudioManager.instance.manualVolumeSources[12].Play();
     }
 
     public void QuitGame()
