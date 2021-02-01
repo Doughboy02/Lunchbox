@@ -9,6 +9,8 @@ public class Dock : MonoBehaviour
         if(collision.gameObject.CompareTag("Player"))
         {
             //do end game stuff here
+            //play win sound
+            ShipInfo.instance.wonGame = true;
             Destroy(collision.gameObject);
         }
     }

@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ShipHealth : MonoBehaviour
 {
@@ -12,6 +14,8 @@ public class ShipHealth : MonoBehaviour
     [SerializeField]
     private float hp = 100f;
 
+    public Slider hpSlider;
+
     private void Awake()
     {
         if (instance == null)
@@ -22,17 +26,24 @@ public class ShipHealth : MonoBehaviour
 
     public void Heal(float _heal)
     {
-        hp += _heal;
+        float temp = hp + _heal;
+        if(temp <= maxHP)
+        {
+            hp += _heal;
+            hpSlider.value = hp;
+        }
     }
 
     public void Damage(float _damage)
     {
         hp -= _damage;
+        AudioManager.instance.manualVolumeSources[5].Play();
+        hpSlider.value = hp;
 
-        //do other stuff later
-        if(hp <= 0)
+        if (hp <= 0)
         {
-            Destroy(gameObject);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            //Destroy(gameObject);
         }
     }
 }
