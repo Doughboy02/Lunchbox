@@ -15,7 +15,7 @@ public class GameTimer : MonoBehaviour
         if(!ShipInfo.instance.wonGame)
         {
             timer += Time.deltaTime;
-            timerText.text = "Time: " + timer.ToString();
+            timerText.text = "Time: " + timer.ToString("0.00");
 
             dialogueTimer += Time.deltaTime;
             if (dialogueTimer > 30.0f)
