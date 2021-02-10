@@ -1910,6 +1910,7 @@ GameObject:
   - component: {fileID: 1171952524}
   - component: {fileID: 8095379473994740769}
   - component: {fileID: 1171952527}
+  - component: {fileID: 1171952528}
   m_Layer: 8
   m_Name: Ship
   m_TagString: Player
@@ -1988,6 +1989,18 @@ MonoBehaviour:
   maxHP: 100
   hp: 100
   hpSlider: {fileID: 256889367}
+--- !u!114 &1171952528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171952523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47f02c3cbd003ae43984a6c997a7db24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1214661589 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9210432721097524691, guid: 0fc5d031f945c45418ee4d0380619476, type: 3}

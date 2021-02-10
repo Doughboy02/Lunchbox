@@ -10,18 +10,17 @@ public class Honk : MonoBehaviour
         {
             int chance = Random.Range(0, 100);
             AudioManager temp = AudioManager.instance;
-            if (chance > 0)
+            if (!temp.manualVolumeSources[0].isPlaying && !temp.manualVolumeSources[1].isPlaying)
             {
-                int rand = Random.Range(0, 2);
-                
-                if (!temp.manualVolumeSources[0].isPlaying && !temp.manualVolumeSources[1].isPlaying)
+                if (chance > 0)
                 {
+                    int rand = Random.Range(0, 2);
                     temp.manualVolumeSources[rand].Play();
                 }
-            }
-            else
-            {
-                temp.manualVolumeSources[8].Play();
+                else
+                {
+                    temp.manualVolumeSources[8].Play();
+                }
             }
             
         }
